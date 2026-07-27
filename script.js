@@ -99,3 +99,34 @@ function calcularRiesgo(confianza){
     if(confianza >= 75) return "🟡 Medio";
     return "🔴 Alto";
 }
+function buscarPartido(){
+
+let partido=document.getElementById("buscarPartido").value;
+
+if(partido==""){
+alert("Escribe un partido.");
+return;
+}
+
+document.getElementById("resultado").innerHTML=
+`
+<h2>Buscando...</h2>
+
+Partido: ${partido}
+
+Próximamente BetVision AI buscará automáticamente:
+
+✅ Cuotas
+
+✅ Estadísticas
+
+✅ Córners
+
+✅ Tarjetas
+
+✅ Remates
+
+✅ Jugadores
+
+`;
+}
