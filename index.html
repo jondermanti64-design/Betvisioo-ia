@@ -1,1 +1,37 @@
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BetVision AI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="contenedor">
+    <h1>⚽ BetVision AI</h1>
+    <p>Analizador Inteligente de Cuotas</p>
+
+    <input type="text" id="local" placeholder="Equipo local">
+
+    <input type="text" id="visitante" placeholder="Equipo visitante">
+
+    <input type="number" id="cuotaLocal" placeholder="Cuota Local">
+
+    <input type="number" id="cuotaEmpate" placeholder="Cuota Empate">
+
+    <input type="number" id="cuotaVisitante" placeholder="Cuota Visitante">
+
+    <button onclick="analizar()">
+        Analizar Partido
+    </button>
+
+    <div id="resultado"></div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
