@@ -72,3 +72,17 @@ mercados.forEach((m,i)=>{
 <i>Próximamente BetVision AI analizará automáticamente goles, córners, tarjetas, remates, remates al arco y mercados de jugadores.</i>
 `;
 }
+function calcularConfianza(cuota){
+    if(cuota <= 1.30) return 95;
+    if(cuota <= 1.50) return 90;
+    if(cuota <= 1.70) return 85;
+    if(cuota <= 2.00) return 75;
+    if(cuota <= 2.50) return 65;
+    return 50;
+}
+
+function calcularRiesgo(confianza){
+    if(confianza >= 90) return "🟢 Bajo";
+    if(confianza >= 75) return "🟡 Medio";
+    return "🔴 Alto";
+}
