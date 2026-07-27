@@ -60,6 +60,19 @@ mercados.sort((a,b)=>a.cuota-b.cuota);
 let ranking = "<h3>Ranking de mercados</h3>";
 
 mercados.forEach((m,i)=>{
+
+let confianza = calcularConfianza(m.cuota);
+let riesgo = calcularRiesgo(confianza);
+
+ranking += `
+<hr>
+<b>#${i+1} ${m.nombre}</b><br>
+Cuota: ${m.cuota}<br>
+Confianza: ${confianza}%<br>
+Riesgo: ${riesgo}<br>
+`;
+
+});
     ranking += `${i+1}. ${m.nombre} (Cuota ${m.cuota})<br>`;
 });
 
