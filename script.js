@@ -35,7 +35,33 @@ document.getElementById("resultado").innerHTML=`
 <b>Probabilidad Empate:</b> ${pEmpate}%<br>
 <b>Probabilidad Visitante:</b> ${pVisitante}%<br><br>
 
-<h3>Mercados recomendados (Versión 1)</h3>
+let mercados = [];
+
+function agregarMercado(nombre, cuota){
+    if(!isNaN(cuota) && cuota > 1){
+        mercados.push({
+            nombre: nombre,
+            cuota: cuota
+        });
+    }
+}
+
+agregarMercado("Más de 2.5 goles", parseFloat(document.getElementById("over25").value));
+agregarMercado("Menos de 2.5 goles", parseFloat(document.getElementById("under25").value));
+agregarMercado("Ambos anotan: Sí", parseFloat(document.getElementById("btsi").value));
+agregarMercado("Ambos anotan: No", parseFloat(document.getElementById("btno").value));
+agregarMercado("Más de 9.5 córners", parseFloat(document.getElementById("cornerOver95").value));
+agregarMercado("Menos de 9.5 córners", parseFloat(document.getElementById("cornerUnder95").value));
+agregarMercado("Más de 4.5 tarjetas", parseFloat(document.getElementById("cardsOver45").value));
+agregarMercado("Menos de 4.5 tarjetas", parseFloat(document.getElementById("cardsUnder45").value));
+
+mercados.sort((a,b)=>a.cuota-b.cuota);
+
+let ranking = "<h3>Ranking de mercados</h3>";
+
+mercados.forEach((m,i)=>{
+    ranking += `${i+1}. ${m.nombre} (Cuota ${m.cuota})<br>`;
+});
 
 ✅ Ganador del partido<br>
 ✅ Doble oportunidad<br>
